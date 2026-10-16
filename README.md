@@ -2,7 +2,7 @@
 
 A web app that uses AI (Google Gemini) to turn one core task, the Pythagorean theorem, into three difficulty levels: Basic, Intermediate and Advanced. Each level has its own problem style, hints, solution and answer feedback.
 
-**Live demo:** PASTE-YOUR-VERCEL-LINK-HERE
+**Live demo:** (https://pythagoras-ai.vercel.app/)
 
 ## Features
 - Three level buttons (mobile-friendly)
@@ -27,4 +27,4 @@ One shared system prompt sets the topic and rules. A separate level prompt chang
 ## Limitations
 AI can occasionally make maths errors; answers should be verified. Free API limits may slow the app.
 
-Author: YOUR NAME
+Author: Togzhan Myrzabekova
