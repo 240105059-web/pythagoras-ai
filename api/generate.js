@@ -40,7 +40,7 @@ async function askGemini(system, user) {
       }),
     }
   );
-  if (!r.ok) throw new Error("AI service error " + r.status);
+  if (!r.ok) throw new Error("AI service error " + r.status + ": " + (await r.text()).slice(0, 300));
   const data = await r.json();
   const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
   return JSON.parse(text.replace(/```json|```/g, "").trim());
@@ -75,6 +75,6 @@ Return JSON exactly like: {"correct": true, "feedback": "text"}`;
 
     return res.status(400).json({ error: "Unknown mode" });
   } catch (e) {
-    return res.status(502).json({ error: "The AI could not answer. Please try again." });
+    return res.status(502).json({ error: "The AI could not answer. " + e.message });
   }
 };
